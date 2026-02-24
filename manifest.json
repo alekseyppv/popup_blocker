@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Popup Blocker by Domain",
+  "description": "Blocks popups and new windows on selected sites. Allows only middle-click tabs.",
+  "version": "1.0.0",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content_script.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Popup Blocker"
+  }
+}

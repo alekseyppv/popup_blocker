@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Popup Blocker</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>Popup Blocker</h1>
+      <p class="hint">Блокирует новые окна и вкладки, разрешая только вкладки, открытые средней кнопкой мыши.</p>
+
+      <section>
+        <button id="add-current" type="button">Добавить текущий домен</button>
+      </section>
+
+      <section>
+        <h2>Сайты с блокировкой</h2>
+        <ul id="domain-list"></ul>
+        <p id="empty-state" class="hint">Список пуст.</p>
+      </section>
+    </main>
+
+    <template id="domain-item-template">
+      <li class="domain-item">
+        <span class="domain-name"></span>
+        <button class="remove-domain" type="button">Удалить</button>
+      </li>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
